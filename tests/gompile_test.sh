@@ -35,9 +35,9 @@ clean_output_binaries() {
 }
 
 # Get system platform.
-SYSTEM_PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
+SYSTEM_PLATFORM=$(go env GOOS)
 # Get system architecture.
-SYSTEM_ARCH=$(uname -m | tr '[:upper:]' '[:lower:]')
+SYSTEM_ARCH=$(go env GOARCH)
 
 # run_test() runs a test passed as argument and increments TESTS_FAILED if test fails
 run_test() {

@@ -17,12 +17,6 @@ ALL=false
 # Set ARCHIVE to false by default.
 ARCHIVE=false
 
-# Check if go is installed.
-if ! command -v go &>/dev/null; then
-    log_error "go is not installed."
-    exit 1
-fi
-
 if [ -z ${COMPILE_PATH} ]; then
     # Set COMPILE_PATH to current directory, change this according to your project main package path.
     COMPILE_PATH=$(pwd)

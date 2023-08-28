@@ -6,6 +6,9 @@ if [ -z "$PLAT_ARCH_SH_INCLUDED" ]; then
 
     readonly PLAT_ARCH_SH_INCLUDED=yes
 
+    source "$SCRIPT_DIR/utils/list.sh"
+    source "$SCRIPT_DIR/utils/golang.sh"
+
     # List of supported platform and architecture pairs using "go tool dist list".
     SUPPORTED_PAIRS=($(go tool dist list))
 
@@ -42,7 +45,7 @@ if [ -z "$PLAT_ARCH_SH_INCLUDED" ]; then
     done
 
     # Get system platform.
-    SYSTEM_PLATFORM=$(uname -s | tr '[:upper:]' '[:lower:]')
+    SYSTEM_PLATFORM=$(go env GOOS)
     # Get system architecture.
-    SYSTEM_ARCH=$(uname -m | tr '[:upper:]' '[:lower:]')
+    SYSTEM_ARCH=$(go env GOARCH)
 fi
