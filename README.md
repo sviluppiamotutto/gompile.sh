@@ -1,4 +1,4 @@
-# Gompile.sh a simple script to compile and archive Go binaries.
+# Gompile.sh - a simple script to compile and archive Go binaries.
 
  This script is intended to be used with Go projects either with a single or multiple binaries.
 
