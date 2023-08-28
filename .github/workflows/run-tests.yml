@@ -1,0 +1,19 @@
+name: Run Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_run:
+jobs:
+  run_tests:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run test file
+      run: |
+         chmod +x ./tests/gompile_test.sh
+         chmod +x ./gompile.sh
+         cd tests
+         ./gompile_test.sh
+      shell: bash
