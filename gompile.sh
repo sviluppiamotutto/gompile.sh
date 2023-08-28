@@ -72,7 +72,7 @@ compile() {
     fi
 
     # Set output file name, it takes the name of the current directory + platform and architecture.
-    output_file_name="$(basename "$COMPILE_PATH")_$PLATFORM_$ARCH"
+    output_file_name="$(basename "$COMPILE_PATH")_${PLATFORM}_${ARCH}"
 
     # Set output file path.
     output_file_path="$output_dir/$output_file_name"
@@ -110,8 +110,6 @@ compile() {
         # Remove build.
         rm "$output_file_path"
     fi
-
-    new_line
 }
 
 # ask_os_arch_and_compile() asks the user for platform and architecture and compiles the project.
